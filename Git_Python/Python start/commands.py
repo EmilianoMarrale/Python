@@ -22,7 +22,8 @@ print("integer tot num = " + str(tot)) # str converte un intero in stringa
 float_num = 1.0 + 4.0
 print("float num = " + str(float_num))
 
- # Liste
+print("Liste")
+# Liste
 bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicycles)
 
@@ -63,6 +64,9 @@ print(bicycles)
 bicycles.append("acqua")
 bicycles.sort()
 print(bicycles)
+# Sort permanente invertendo lista
+bicycles.sort(reverse=True)
+print(bicycles)
 
 # Sort temporaneo (SORTED)
 print(sorted(bicycles))
@@ -81,3 +85,127 @@ magicians = ['alice', 'david', 'carolina']
 for magician in magicians:
     print(magician) # IL TAB è FONDAMENTALE ALTRIMENTI NON RICONOSCE IL BLOCCO
     
+# Range loop (prints from 1 to 4)
+for number in range(1,5):
+    print(number)
+
+# Creare lista di numeri con range
+numbers = list(range(1,6))
+print(numbers)
+
+#Crea lista da 2 a 10 con passo 2
+even_numbers = list(range(2,11,2))
+print(even_numbers)
+
+# Min/Max/Sum di una lista di numeri
+digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print("min: " + str(min(digits)))
+print("max: " + str(max(digits)))
+print("sum: " + str(sum(digits)))
+
+# Slicing a List
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print("CIaone ", players)
+print(players[0:3])
+# Looping Through a Slice
+print("Here are the last three players on my team:")
+for player in players[-3:]:
+    print(player.title())
+
+# Copiare una lista
+# Per copiare una lista occorre usare lo slicing [:] senza indici
+players_copy = players[:]
+print(players_copy)
+players_copy.pop()
+print(players_copy)
+print(players)
+
+print("Tuples\n")
+# Tuple
+# Oggetti immutabili usati per contenere dati (Es dimensione immutabile di un rettangolo)
+dimensions = (200, 50)
+print(dimensions[0])
+print(dimensions[1])
+# Non è possibile modificare singolarmente i valori di dimensions accedendo ai singoli campi
+# Ma è possibile aggiornare dimensions con nuovi valori es dimensions = (400, 60)
+
+print("IF Statements\n")
+# IF statements
+cars = ['audi', 'bmw', 'subaru', 'toyota']
+for car in cars:
+    if car == "bmw":
+        print(car.upper())
+    else:
+        print(car.title())
+
+# N.B. && e || in python sono and e or
+
+# Ricerca di elementi in una lista
+banned_users = ['andrew', 'carolina', 'david']
+user = 'marie'
+if user not in banned_users:
+    print(user.title() + ", you can post a response if you wish.")
+elif user in banned_users:
+    print(" You are banned")
+else: 
+    print(" fuck off")
+
+# Booleans
+true = True
+false = False
+
+if true is True: 
+    print("True statement")
+elif false is False:
+    print("False statement")
+
+# Dizionari 
+print("Dizionario\n")
+
+prodotti = {'prodotto': 'uva', 'prezzo': 50}
+print("Prodotto: ", prodotti["prodotto"], "\nPrezzo: ", prodotti["prezzo"])
+
+# Aggiunta chiave-valore
+prodotti["nuova_chiave"] = " nuovo_valore"
+print(prodotti) 
+
+# Modifica valore
+prodotti["prodotto"] = "grano"
+print(prodotti)
+
+# Elimina chiave-valore
+del prodotti["nuova_chiave"]
+print(prodotti)
+
+# Looping su dizionario
+for chiave, valore in prodotti.items():
+    print("\n" + chiave)
+    print(str(valore))
+
+# Looping su chiavi
+for chiave in prodotti.keys():
+    print(chiave)
+
+# Looping su valori
+for valore in prodotti.values():
+    print(valore)
+
+# Nesting di dizionari
+prodotti_1 = {"prodotto": "cola", "prezzo": 10}
+prodotti_2 = {"prodotto": "pepsi", "prezzo": 9}
+prodottoni = [prodotti, prodotti_1, prodotti_2]
+print(prodottoni)
+for prodotto in prodottoni:
+    for p in prodotto.items():
+        print(p)
+
+# Dizionario con lista
+
+pizze = {"carciospeck": ["carciofi", "speck", "grana"],
+            "gambero": ["uovo", "gambero", "salsa"] }
+for pizza, ingredienti in pizze.items():
+    print(pizza)
+    for ingrediente in ingredienti:
+        print(ingrediente)
+print(pizze)
+
