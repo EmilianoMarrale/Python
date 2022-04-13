@@ -9,3 +9,16 @@ length = len(list)
 for x in range(0,length):
     list[x] = list[x] * (-1)
 print(list)
+
+list = [ 1 ,2 ,9 ,4 ,6]
+length = len(list)
+for x in range(0, length-1):
+    if list[x] != list[x+1] - 1:
+        print(list[x+1])
+
+
+
+
+
+
+
