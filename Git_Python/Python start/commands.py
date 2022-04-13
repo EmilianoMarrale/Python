@@ -209,3 +209,67 @@ for pizza, ingredienti in pizze.items():
         print(ingrediente)
 print(pizze)
 
+
+# User inputs
+# message = input("Tell me something, and I will repeat it back to you: ")
+# print(message)
+
+# age = int(input("What's your age "))
+# print(str(age))
+
+# prompt = "\nPlease enter the name of a city you have visited:"
+# prompt += "\n(Enter 'quit' when you are finished.) "
+# while True:
+#     city = input(prompt)
+#     if city == 'quit':
+#         break
+#     else:
+#         print("I'd love to go to " + city.title() + "!")
+
+# BREAK e CONTINUE sono validi 
+
+# Funzioni con keyword arguments
+def describe_pet(animal_type, pet_name):
+    """Display information about a pet."""
+    print("\nI have a " + animal_type + ".")
+    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+describe_pet(animal_type='hamster', pet_name='harry')
+
+# Parametro opzionale (DEVE NECESSARIAMENTE ESSERE L'ULTIMO DELLA LISTA)
+def opzionale(nome, cognome, secondo_nome=''):
+    print(nome,secondo_nome,cognome)
+opzionale("Emi", "scrofani", "maria")
+
+# Numero di parametri opzionali
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested."""
+    for topping in toppings:
+        print("- " + topping)
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+# Numero di parametri opzionali di keyword arguments(?)
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    profile = {}
+
+    profile['first_name'] = first
+    profile['last_name'] = last
+
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+user_profile = build_profile('albert', 'einstein',location='princeton',field='physics')
+print(user_profile)
+
+# E' possibile definire le librerie creando un file .py contentente le funzioni definite ed implementate 
+# e usare import nome_modulo per importare la "libreria"
+# Si utilizzano le funzioni con nome_modulo.funzione(args) dove nome è la "libreria" e funzione è la funzione definita al suo interno
+
+# E' anche possibile importare singole funzioni con from module_name import function_0, function_1, function_2
+
+# Usando "as" è possibile rinominare la funzione importata from module_name import function_name as fn
+
+# E' possibile importare tutte le funzioni con from module_name import * ed evitare di usare la DOT NOTATION nominata prima nel caso di 
+# un import generico della libreria come import nome_modulo
